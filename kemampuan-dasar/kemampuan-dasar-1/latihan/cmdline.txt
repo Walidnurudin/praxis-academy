@@ -1,0 +1,89 @@
+1.LISTING FILES
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar
+
+2.LISTING HIDDEN FILE
+walid@walid-X553MA:~/praxis-academy$ ls -a
+.  ..  .contoh  kemampuan-dasar
+
+3.CREATE & VIEW FILE
+walid@walid-X553MA:~/praxis-academy$ cat>tugas
+isi tugas
+walid@walid-X553MA:~/praxis-academy$ cat tugas
+isi tugas
+walid@walid-X553MA:~/praxis-academy$ 
+
+4.REMOVE FILE
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  tugas
+walid@walid-X553MA:~/praxis-academy$ rm tugas
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar
+walid@walid-X553MA:~/praxis-academy$
+
+5.RENAME FILE
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  tugas
+walid@walid-X553MA:~/praxis-academy$ mv tugas project
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  project
+walid@walid-X553MA:~/praxis-academy$ 
+
+6.CREATING DIRECTORY
+walid@walid-X553MA:~/praxis-academy$ mkdir tugas
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  project  tugas
+walid@walid-X553MA:~/praxis-academy$ 
+
+7.REMOVING DIRECTORY
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  project  tugas
+walid@walid-X553MA:~/praxis-academy$ rmdir tugas
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  project
+walid@walid-X553MA:~/praxis-academy$ 
+
+8.RENAMING DIRECTORY
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  project  tugas
+walid@walid-X553MA:~/praxis-academy$ mv tugas work
+walid@walid-X553MA:~/praxis-academy$ ls
+kemampuan-dasar  project  work
+walid@walid-X553MA:~/praxis-academy$ 
+
+9.HISTORY
+walid@walid-X553MA:~/praxis-academy$ history
+.
+.
+.
+ 1206  ls
+ 1207  mv tugas work
+ 1208  ls
+ 1209  man
+ 1210  manual
+ 1211  man
+ 1212  yes
+ 1213  clear
+ 1214  man
+ 1215  yes
+ 1216  clear
+ 1217  history
+walid@walid-X553MA:~/praxis-academy$ 
+
+10.CLEAR
+ 1211  man
+ 1212  yes
+ 1213  clear
+ 1214  man
+ 1215  yes
+ 1216  clear
+ 1217  history
+ 1218  cd
+ 1219  history
+walid@walid-X553MA:~$ cd parxis-academy
+bash: cd: parxis-academy: No such file or directory
+walid@walid-X553MA:~$ cd praxis-academy
+walid@walid-X553MA:~/praxis-academy$ clear
+-
+walid@walid-X553MA:~/praxis-academy$ 
+
