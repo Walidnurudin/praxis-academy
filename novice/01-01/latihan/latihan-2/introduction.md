@@ -1,3 +1,5 @@
+# Introduction
+
 Pemrograman adalah tindakan membangun program — serangkaian instruksi yang tepat yang memberi tahu komputer apa yang harus dilakukan. Karena komputer itu bodoh, mahluk buas, pemrograman pada dasarnya membosankan dan membuat frustrasi.
 
 Untungnya, jika Anda bisa mengatasi fakta itu, dan mungkin bahkan menikmati pemikiran yang keras dalam hal yang dapat ditangani oleh mesin bodoh, pemrograman dapat bermanfaat. Ini memungkinkan Anda melakukan berbagai hal dalam hitungan detik yang akan memakan waktu lama dengan tangan. Ini adalah cara untuk membuat alat komputer Anda melakukan hal-hal yang sebelumnya tidak dapat dilakukan. Dan itu memberikan latihan yang luar biasa dalam pemikiran abstrak.
