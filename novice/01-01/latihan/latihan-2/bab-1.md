@@ -39,23 +39,19 @@ NaN adalah singkatan dari "not a number", meskipun itu adalah nilai dari jenis a
 ## Strings
 String digunakan untuk merepresentasikan teks. Mereka ditulis dengan melampirkan isinya dalam tanda kutip.
 
-<code>
-`Down on the sea`
-"Lie on the ocean"
-'Float on the ocean'
-</code>
+<code>`Down on the sea`</code>
+<code>"Lie on the ocean"</code>
+<code>'Float on the ocean'</code>
 
 Anda dapat menggunakan tanda kutip tunggal, tanda kutip ganda, atau tanda kutip belakang untuk menandai string, selama tanda kutip di awal dan akhir string cocok.
 
 ## Unary operators
 Tidak semua operator adalah simbol. Beberapa ditulis sebagai kata-kata. Salah satu contohnya adalah operator typeof, yang menghasilkan nilai string yang menamai tipe nilai yang Anda berikan.
 
-<code>
-console.log(typeof 4.5)
-// → number
-console.log(typeof "x")
-// → string
-</code>
+<code>console.log(typeof 4.5)</code>
+<code>// → number</code>
+<code>console.log(typeof "x")</code>
+<code>// → string</code>
 
 ## Boolean values
 Seringkali berguna untuk memiliki nilai yang membedakan hanya antara dua kemungkinan, seperti "ya" dan "tidak" atau "aktif" dan "tidak aktif". Untuk tujuan ini, JavaScript memiliki tipe Boolean, yang hanya memiliki dua nilai, benar dan salah, yang ditulis sebagai kata-kata tersebut.
@@ -63,12 +59,11 @@ Seringkali berguna untuk memiliki nilai yang membedakan hanya antara dua kemungk
 ## Comparison
 Berikut salah satu cara untuk menghasilkan nilai Boolean:
 
-<code>
-console.log(3 > 2)
-// → true
-console.log(3 < 2)
-// → false
-</code>
+<code>console.log(3 > 2)</code>
+<code>// → true</code>
+<code>console.log(3 < 2)</code>
+<code>// → false</code>
+
 
 Tanda > dan < adalah simbol tradisional untuk masing-masing "lebih besar dari" dan "lebih kecil dari". Mereka adalah operator biner. Menerapkannya menghasilkan nilai Boolean yang menunjukkan apakah benar dalam kasus ini.
 
@@ -77,21 +72,21 @@ Ada juga beberapa operasi yang dapat diterapkan ke nilai Boolean itu sendiri. Ja
 
 Operator && merepresentasikan logika 'and'. Ini adalah operator biner, dan hasilnya benar hanya jika kedua nilai yang diberikan padanya benar.
 
-<code>
-console.log(true && false)
-// → false
-console.log(true && true)
-// → true
-</code>
+
+<code>console.log(true && false)</code>
+<code>// → false</code>
+<code>console.log(true && true)</code>
+<code>// → true</code>
+
 
 operator || menunjukkan logika 'or'. Ini menghasilkan true jika salah satu nilai yang diberikan padanya benar.
 
-<code>
-console.log(false || true)
-// → true
-console.log(false || false)
-// → false
-</code>
+
+<code>console.log(false || true)</code>
+<code>// → true</code>
+<code>console.log(false || false)</code>
+<code>// → false</code>
+
 
 ## Empty values
 Ada dua nilai khusus, tertulis null dan undefined, yang digunakan untuk menunjukkan tidak adanya nilai yang berarti. Mereka sendiri adalah nilai-nilai, tetapi mereka tidak membawa informasi.
@@ -99,30 +94,27 @@ Ada dua nilai khusus, tertulis null dan undefined, yang digunakan untuk menunjuk
 ## Automatic type conversion
 JavaScript berusaha keras untuk menerima hampir semua program yang Anda berikan, bahkan program yang melakukan hal-hal aneh. Ini ditunjukkan dengan baik oleh ekspresi berikut:
 
-<code>
-console.log(8 * null)
-// → 0
-console.log("5" - 1)
-// → 4
-console.log("5" + 1)
-// → 51
-console.log("five" * 2)
-// → NaN
-console.log(false == 0)
-// → true
-</code>
+<code>console.log(8 * null)</code>
+<code>// → 0</code>
+<code>console.log("5" - 1)</code>
+<code>// → 4</code>
+<code>console.log("5" + 1)</code>
+<code>// → 51</code>
+<code>console.log("five" * 2)</code>
+<code>// → NaN</code>
+<code>console.log(false == 0)</code>
+<code>// → true</code>
 
 ## Short-circuiting of logical operators
 The logical operators && and || handle values of different types in a peculiar way. They will convert the value on their left side to Boolean type in order to decide what to do, but depending on the operator and the result of that conversion, they will return either the original left-hand value or the right-hand value.
 
 The || operator, for example, will return the value to its left when that can be converted to true and will return the value on its right otherwise. This has the expected effect when the values are Boolean and does something analogous for values of other types.
 
-<code>
-console.log(null || "user")
-// → user
-console.log("Agnes" || "user")
-// → Agnes
-</code>
+
+<code>console.log(null || "user")</code>
+<code>// → user</code>
+<code>console.log("Agnes" || "user")</code>
+<code>// → Agnes</code>
 
 ## Summary
 Kami melihat empat jenis nilai JavaScript di bab ini: angka, string, Boolean, dan nilai tak terdefinisi.
