@@ -33,11 +33,11 @@ console.log(Shape.isPrototypeOf(t))
 console.log(t.getPerimeter());
 console.log(t.getType());
 
+//LOOPING
+let list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+function shuffle(param){
+   return param.sort(() => Math.random() - 0.3);
+}
 
-
-
-
-
-
-
+console.log(shuffle(list));
