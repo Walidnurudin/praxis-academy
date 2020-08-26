@@ -34,8 +34,24 @@ class Vehicle {
 }
 
 
-class Car extends Vehicle {}
+class Car extends Vehicle { }
 
 let car = new Car("Honda", "Accord", "Purple");
 
 console.log(car.getName()); // "Honda Accord Purple"
+
+
+// GETTERS / SETTERS
+class Vehicle {
+    constructor(model) {
+        this.model = model;
+    }
+
+    get model() {
+        return this._model;
+    }
+
+    set model(value) {
+        this._model = value;
+    }
+}
