@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LodashJS</title>
+</head>
+<body>
+    <h1>LodashJS</h1>
+
+    <script src="lodash.min.js"></script>
+    <script>
+        var array = [1];
+		var other = _.concat(array, 2, [3], [[4]]);
+ 
+		console.log(other);
+		// => [1, 2, 3, [4]]
+ 
+		console.log(array);
+		// => [1]
+    </script>
+</body>
+</html>

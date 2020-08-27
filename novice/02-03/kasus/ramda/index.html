@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RamdaJS</title>
+</head>
+<body>
+    <h1>RamdaJS</h1>
+
+    <script src="ramda.min.js"></script>
+    <script>
+    	var greet = R.replace('{name}', R.__, 'Hello, {name}!');
+		console.log(greet('Alice')); //=> 'Hello, Alice!'
+    </script>
+</body>
+</html>
