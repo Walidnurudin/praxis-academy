@@ -12,6 +12,9 @@
     <script>
     	var greet = R.replace('{name}', R.__, 'Hello, {name}!');
 		console.log(greet('Alice')); //=> 'Hello, Alice!'
+
+		console.log(R.test(/^x/, 'xyz')); //=> true
+		console.log(R.test(/^y/, 'xyz')); //=> false
     </script>
 </body>
 </html>
