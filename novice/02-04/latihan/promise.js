@@ -6,10 +6,11 @@
 // 3. Rejected = artinya operasi gagal.
 
 const promise1 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("sukses!");
-        // reject("error");
-    }, 1000)
+    if(true){
+        resolve("true");
+    }else{
+        reject("false");
+    }
 });
 
 promise1
