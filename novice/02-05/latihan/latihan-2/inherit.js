@@ -1,3 +1,26 @@
+// 1
+class ValidationError extends Error {
+    constructor(message){
+        super(message);
+        this.name = this.constructor.name
+    }
+}
+
+function test(){
+  throw new ValidationError("Oops!");
+}
+
+try {
+  alert("try");
+  test();
+}catch(err){
+  alert(err.message);
+  alert(err.name);
+  alert(err.stack);
+}
+
+
+// 2
 class FormatError extends SyntaxError {
   constructor(message){
     super(message)
