@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a table</title>
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+        tr {
+            border: 2px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mountains</h1>
+
+    <div id="mountains">
+        <table id="tr">
+            <tr>
+                <th>name</th>
+                <th>height</th>
+                <th>place</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const MOUNTAINS = [
+            { name: "Kilimanjaro", height: 5895, place: "Tanzania" },
+            { name: "Everest", height: 8848, place: "Nepal" },
+            { name: "Mount Fuji", height: 3776, place: "Japan" },
+            { name: "Vaalserberg", height: 323, place: "Netherlands" },
+            { name: "Denali", height: 6168, place: "United States" },
+            { name: "Popocatepetl", height: 5465, place: "Mexico" },
+            { name: "Mont Blanc", height: 4808, place: "Italy/France" }
+        ];
+
+        let tr = document.getElementById("tr");
+
+        MOUNTAINS.map(data => {
+            tr.innerHTML += `
+            <tr>
+                <td>${data.name}</td>
+                <td>${data.height}</td>
+                <td>${data.place}</td>
+            </tr>
+            `;
+        })
+    </script>
+</body>
+
+</html>
