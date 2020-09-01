@@ -1,14 +1,55 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <script src="jquery-1.12.0.min.js" charset="utf-8"></script>
-    <script src="random.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="grid.css" media="screen" title="no title" charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="container">
-    </div>
-  </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <style>
+        .child {
+            width: 100px;
+            height: 100px;
+            margin: 2px;
+            background-color: aqua;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        window.onload = function () {
+            for (let i = 0; i < 100; i++) {
+                let box = document.createElement("div");
+                box.setAttribute("class", "child");
+                document.body.appendChild(box);
+            }
+        }
+
+        setInterval(() => {
+            let div = document.querySelectorAll(".child");
+            let letters = "1234567890ABCDEF";
+            let color1 = '#';
+            let color2 = '#';
+            
+            function randomColor(param){
+                for(let i = 0; i < 6; i++){
+                    param += letters[Math.floor(Math.random() * 16)];
+                }
+                return param;
+            };
+
+            // color1 = randomColor(color1);
+            // color2 = randomColor(color2);
+
+            for(let i = 0; i < div.length; i++){
+                if(i % 2 === 0) div[i].style.backgroundColor = randomColor(color1);
+                else div[i].style.backgroundColor = randomColor(color2);
+            }
+
+        }, 1000)
+    </script>
+</body>
+
 </html>
