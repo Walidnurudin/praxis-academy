@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- grid -->
     <div id="demo">
       <form id="search">
         Search
@@ -7,6 +8,8 @@
       </form>
       <Grid :heroes="gridData" :columns="gridColumns" :filter-key="searchQuery"></Grid>
     </div>
+
+    <!-- modal -->
     <div id="app">
       <button id="show-modal" @click="showModal = true">Show Modal</button>
       <!-- use the modal component, pass in the prop -->

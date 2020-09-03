@@ -20,6 +20,9 @@
         </tr>
       </tbody>
     </table>
+    <p>
+      {{heroes}}
+    </p>
   </div>
 </template>
 
