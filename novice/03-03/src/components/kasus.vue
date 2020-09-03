@@ -7,8 +7,8 @@
         <th>Title</th>
       </tr>
       <tr v-for="item in data" :key="item.id">
-        <td>{{item.id}}.</td>
-        <td>{{item.title}}</td>
+        <td @click="show(item.id)">{{item.id}}.</td>
+        <td v-show="id.includes(item.id)">{{item.title}}</td>
       </tr>
     </table>
   </div>
@@ -19,7 +19,8 @@ export default {
   name: "kasus",
   data: () => {
     return {
-      data: ""
+      data: "",
+      id: []
     };
   },
   beforeCreate() {
@@ -41,17 +42,10 @@ export default {
   mounted() {
     console.log("Mounted!");
   },
-  beforeUpdate() {
-    console.log("Before update!");
-  },
-  updated() {
-    console.log("Update!");
-  },
-  beforeDestroy() {
-    console.log("Before destroyed!");
-  },
-  destroyed() {
-    console.log("Destroyed!");
+  methods: {
+    show: function(id){
+      return this.id.push(id)
+    }
   }
 };
 </script>
