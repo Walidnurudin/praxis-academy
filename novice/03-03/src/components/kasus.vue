@@ -45,6 +45,7 @@ export default {
   methods: {
     show: function(id){
       return this.id.push(id)
+      
     }
   }
 };
