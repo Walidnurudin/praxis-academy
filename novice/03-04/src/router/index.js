@@ -11,9 +11,19 @@ const routes = [
     component: Home
   },
   {
-    path: '/about/:id',
+    path: '/dinamis/:id',
+    name: 'Dinamis',
+    component: () => import(/* webpackChunkName: "dinamis" */ '../views/Dinamic.vue')
+  },
+  {
+    path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/about/:id',
+    name: 'Detail',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Detail.vue')
   },
   {
     path: '/auth',
