@@ -7,7 +7,7 @@
         <th>Title</th>
       </tr>
       <tr v-for="item in data" :key="item.id">
-        <td @click="show(item.id)">{{item.id}}.</td>
+        <td @click="show(item.id)" class="btn">{{item.id}}.</td>
         <td v-show="id.includes(item.id)">{{item.title}}</td>
       </tr>
     </table>
@@ -44,14 +44,23 @@ export default {
   },
   methods: {
     show: function(id){
-      return this.id.push(id)
-      
+        if(!this.id.includes(id)){
+          return this.id.push(id)
+        }else{
+          let item = this.id.filter(i => i == id);
+          let a = this.id.indexOf(item[0]);
+
+          return this.id.splice(a, 1);
+        }
     }
   }
 };
 </script>
 
 <style scoped>
+.btn {
+  cursor: pointer;
+}
 table {
   margin: 0 auto;
 }
