@@ -12,7 +12,7 @@
           <v-card outlined>
             <h1>category</h1>
             <div v-for="item in data" :key="item.id">
-              <p>{{item.id}}. {{item.title}}</p>
+              <router-link :to="`/detail/${item.id}`"><p>{{item.id}}. {{item.title}}</p></router-link>
             </div>
           </v-card>
         </v-col>

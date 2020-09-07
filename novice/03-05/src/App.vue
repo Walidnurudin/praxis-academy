@@ -1,13 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> | 
-      <router-link to="/register">Register</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <bar/>
+    <v-main>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
+
+<script>
+import bar from "./components/bar.vue";
+
+export default {
+  components: {
+    bar
+  }
+};
+</script>
 
 <style lang="scss">
 #nav {
