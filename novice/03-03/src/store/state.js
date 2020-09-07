@@ -1,3 +1,4 @@
+// state menampung data murni
 export default {
     name: "Walid nurudin",
     city: "Indramayu",

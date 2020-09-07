@@ -4,13 +4,13 @@
     <hr>
     <latihan :nama="name" />
     <hr>
-    <kasus/>
+    <!-- <kasus/> -->
   </div>
 </template>
 
 <script>
 import latihan from "./components/latihan";
-import kasus from "./components/kasus";
+// import kasus from "./components/kasus";
 import cobaVuex from "./components/coba-vuex";
 
 export default {
@@ -22,7 +22,7 @@ export default {
   },
   components: {
     latihan,
-    kasus,
+    // kasus,
     cobaVuex
   }
 }

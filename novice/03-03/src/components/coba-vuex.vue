@@ -14,6 +14,14 @@ import { mapState, mapGetters } from "vuex";
 
 export default {
     computed: {
+        addhobby: {
+            get(){
+                return this.$store.state.hobby;
+            },
+            set(id, name){
+                this.$store.commit('addHobby', id, name);
+            }
+        },
         ...mapState([
             'city'
         ]),
