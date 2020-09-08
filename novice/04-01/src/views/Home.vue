@@ -1,23 +1,30 @@
 <template>
-  <div class="about">
-    <h1>This is an home page {{getCount}}</h1>
+  <div>
+    <h1>Counter {{getCount}}</h1>
     <v-btn @click="increment">add</v-btn>
+    <div v-for="item in getData" :key="item.id">
+      <p>{{item.id}}. {{item.username}}</p>
+    </div>
   </div>
 </template>
 
 <script>
-import {mapGetters, mapMutations} from "vuex";
+import {mapGetters, mapActions} from "vuex";
 
 export default {
   methods: {
-    ...mapMutations([
-      'increment'
+    ...mapActions([
+      'increment',
     ])
   },
   computed: {
     ...mapGetters([
-      'getCount'
+      'getCount',
+      'getData'
     ])
+  },
+  mounted(){
+    this.$store.dispatch('get');
   }
 }
 </script>
