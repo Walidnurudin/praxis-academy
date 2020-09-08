@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>{{getData | item(this.$route.params.id)}}</div>
+    <h1>{{item[0].id}}. {{item[0].name}}</h1>
   </div>
 </template>
 
@@ -10,15 +10,10 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters(["getData"]),
-  },
-  filters: {
-    item: function(value, key) {
-      let a = value.filter((a, i) => i + 1 == key);
+    item: function() {
+      let a = this.getData.filter((a, i) => i + 1 == this.$route.params.id);
       return a;
     }
   }
 };
 </script>
-
-<style>
-</style>
