@@ -19,6 +19,9 @@ export default {
 
   components: {
     navbar
+  },
+  async created() {
+    await this.$store.dispatch("get");
   }
 };
 </script>

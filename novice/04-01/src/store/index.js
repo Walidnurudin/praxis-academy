@@ -8,39 +8,46 @@ export default new Vuex.Store({
     count: 0,
     data: []
   },
-  // syncronus (methods), menggunakan commit
-  // commit = menjalankan function/mutations yg ada di store
+  // syncronus (methods), untuk merubah state, menggunakan commit
+  // commit = menjalankan function(mutations)
   mutations: {
-    increment(state){
+    increment(state) {
       state.count++
     },
-    get(state, data){
+    // Commit with Payload
+    get(state, data) {
       state.data = data
     }
   },
-  // asyncronus (methods), harus melalui mutation / menjalankan mutation, mrnggunakan dispatch
-  // dispatch = mengirim function
+  // asyncronus (methods), menjalankan mutation, menggunakan dispatch
+  // dispatch = menjalankan function(actions)
   actions: {
-    increment({commit}){
+    increment({ commit }) {
       commit('increment');
     },
-    get({commit}){
+    get({ commit }) {
       fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => res.json())
-      .then(res => {
+        .then(res => res.json())
+        .then(res => {
+          // Commit with Payload
           commit('get', res)
-      })
+        })
     }
   },
+
   // getter mengambil/manampilkan state, seperti computed, untuk memfilter state yg dipanggil (computed)
   getters: {
-    getCount: function(state){
-      if(state.count % 2 == 0) return `${state.count} even`;
+    getCount: function (state) {
+      if (state.count % 2 == 0) return `${state.count} even`;
       else return `${state.count} odd`
     },
-    getData: function(state){
+    getData: function (state) {
       return state.data
-    }
+    },
+    // getDetail: function(state){
+    //   let a = state.data.filter((a, i) => i + 1 == this.$route.params.id)
+    //   return a
+    // }
   },
 
   modules: {
