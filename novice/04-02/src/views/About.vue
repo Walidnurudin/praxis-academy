@@ -22,8 +22,9 @@
           <tr v-for="item in data" :key="item.id">
             <td>{{ item.id }}</td>
             <td>
-              <div>{{ item.title }}</div>
+              <div v-if="isEdit !== item.id">{{ item.title }}</div>
               <v-text-field
+                v-if="isEdit === item.id"
                 type="text"
                 v-model="form.edit"
                 @keyup.enter="edit()"
@@ -32,8 +33,8 @@
             </td>
             <td>
               <v-btn color="red darken-1" @click="del(item.id)" rounded>delete</v-btn>
-              <v-btn color="teal accent-3" @click="edit(item)" rounded>update</v-btn>
-              <v-btn color="light-blue accent-3" @click="update(item)" rounded>save</v-btn>
+              <v-btn color="teal accent-3" v-if="isEdit !== item.id" @click="edit(item)" rounded>update</v-btn>
+              <v-btn color="light-blue accent-3" v-if="isEdit === item.id" @click="update(item.id)" rounded>save</v-btn>
             </td>
           </tr>
         </tbody>
@@ -54,6 +55,7 @@ export default {
       },
       data: [],
       loading: true,
+      isEdit: true,
       error: false
     };
   },
@@ -87,10 +89,15 @@ export default {
         });
     },
     edit: function(item) {
+      this.isEdit = item.id;
       this.form.edit = item.title;
     },
-    update: function(){
-
+    update: async function(id){
+      await axios.put('http://192.168.1.44:3000/task/edit/' + id, {
+        title: this.form.edit
+      });
+      this.isEdit = true;
+      this.get();
     }
   },
 
