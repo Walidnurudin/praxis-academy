@@ -2,7 +2,8 @@
   <v-app>
     <v-main>
       <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link>|
+      <router-link to="/profile">Profile</router-link>
       
       <v-container>
         <router-view />
