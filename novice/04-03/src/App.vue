@@ -1,0 +1,28 @@
+<template>
+  <v-app>
+    <navbar />
+
+    <v-main>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">About</router-link>|
+      <router-link to="/modules">Modules</router-link>
+
+      <router-view />
+    </v-main>
+  </v-app>
+</template>
+
+<script>
+import navbar from "./components/navbar.vue";
+
+export default {
+  name: "App",
+
+  components: {
+    navbar
+  },
+  created() {
+    this.$store.dispatch("get");
+  }
+};
+</script>
