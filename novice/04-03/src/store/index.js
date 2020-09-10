@@ -22,6 +22,7 @@ export default new Vuex.Store({
       .then(res => res.json())
       .then(res => {
         commit('dataAll', res)
+        console.log(res)
       })
     }
   },
