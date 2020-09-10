@@ -2,7 +2,7 @@
   <v-row>
     <v-dialog v-model="dialog" persistent width="500px">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="primary" dark v-bind="attrs" v-on="on">UPDATE</v-btn>
+        <v-btn color="primary" dark v-bind="attrs" @click="up(id)" v-on="on">UPDATE</v-btn>
       </template>
       <v-card>
         <v-card-title>
@@ -32,7 +32,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="dialog = false">Cancel</v-btn>
-          <v-btn color="blue darken-1" text @click="$emit('klik', id)">Update</v-btn>
+          <v-btn color="blue darken-1" text @click="dialog = false">Update</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -43,6 +43,7 @@
 
 export default {
   data: () => ({
+    id: '',
     dialog: false,
     radioGroup: '',
     form: {
@@ -54,7 +55,11 @@ export default {
     }
   }),
   methods: {
-    
+    up: function(id){
+      this.$emit('update')
+      this.id = id
+      alert('ok',this.id)
+    }
   }
 };
 </script>

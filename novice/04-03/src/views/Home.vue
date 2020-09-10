@@ -6,7 +6,7 @@
         <h1>{{i.id}}. {{i.name}}</h1>
       </router-link>
       <v-btn @click="del(i.id)" color="red darken-2">delete</v-btn>
-      <update />
+      <update @update="up(i.id)" />
     </div>
   </div>
 </template>
@@ -36,9 +36,7 @@ export default {
         .catch(err => console.log(err));
     },
     up: function(id) {
-      axios
-        .put("http://192.168.1.44:8000/toys/" + id, this.form)
-        .then(res => console.log(res));
+      alert(id)
     }
   }
 };
