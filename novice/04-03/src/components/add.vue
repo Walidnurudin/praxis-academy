@@ -22,8 +22,9 @@
               </v-col>
               <v-col cols="12" sm="6">
                 <v-radio-group v-model="form.was_included_in_home">
-                  <v-radio label="ada" :value="true"></v-radio>
-                  <v-radio label="tidak ada" :value="false"></v-radio>
+                  already home?
+                  <v-radio label="Yeah" :value="true"></v-radio>
+                  <v-radio label="no" :value="false"></v-radio>
                 </v-radio-group>
               </v-col>
             </v-row>

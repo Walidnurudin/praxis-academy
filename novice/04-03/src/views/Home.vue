@@ -1,13 +1,35 @@
 <template>
   <div>
     <add />
-    <div v-for="i in getData" :key="i.id">
-      <router-link :to="`/detail/${i.id}`">
-        <h1>{{i.id}}. {{i.name}}</h1>
-      </router-link>
-      <v-btn @click="del(i.id)" color="red darken-2">delete</v-btn>
-      <update @update="up(i.id)" />
-    </div>
+    <v-simple-table fixed-header height="400px">
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="i in getData" :key="i.id">
+            <td class="text-center">{{i.id}}</td>
+            <td class="text-center">
+              <router-link :to="`/detail/${i.id}`">{{i.name}}</router-link>
+            </td>
+            <td class="text-center">
+              <v-row>
+                <v-col>
+                  <v-btn @click="del(i.id)" color="red darken-2">delete</v-btn>
+                </v-col>
+                <v-col>
+                  <update :p="i" />
+                </v-col>
+              </v-row>
+            </td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </div>
 </template>
 
@@ -34,9 +56,6 @@ export default {
           console.log(res);
         })
         .catch(err => console.log(err));
-    },
-    up: function(id) {
-      alert(id)
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>okehh</h1>
+      <h1>Modules page</h1>
   </div>
 </template>
 

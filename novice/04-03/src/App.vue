@@ -1,12 +1,7 @@
 <template>
   <v-app>
     <navbar />
-
-    <v-main>
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>|
-      <router-link to="/modules">Modules</router-link>
-
+    <v-main class="mt-10">
       <router-view />
     </v-main>
   </v-app>
