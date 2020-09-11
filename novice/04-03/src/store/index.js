@@ -5,13 +5,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    data: []
+    data: [],
+    isLoading: true
   },
   // syncronus (methods), untuk merubah state, menggunakan commit
   // commit = menjalankan function(mutations)
   mutations: {
     dataAll: function(state, payload){
       state.data = payload;
+    },
+    setLoading: function(state, payload){
+      state.isLoading = payload
+    },
+    setError: function(state, payload){
+      state.isError = payload
     }
   },
   // asyncronus (methods), menjalankan mutation, menggunakan dispatch
@@ -22,7 +29,11 @@ export default new Vuex.Store({
       .then(res => res.json())
       .then(res => {
         commit('dataAll', res)
+        commit('setLoading', false)
         console.log(res)
+      })
+      .catch(err => {
+        alert(err)
       })
     }
   },

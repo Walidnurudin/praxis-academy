@@ -58,38 +58,41 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  props: ['p'],
+  props: ["p"],
   data: () => ({
     dialog: false,
-    radioGroup: '',
+    radioGroup: "",
     form: {
-        name: '',
-        description: '',
-        release_date: "2017-10-08T01:01:00.776594Z",
-        toy_category: '',
-        was_included_in_home: false
+      name: "",
+      description: "",
+      release_date: new Date(),
+      toy_category: "",
+      was_included_in_home: false
     }
   }),
   methods: {
-    up: function(){
-      axios.put('http://192.168.1.44:8000/toys/' + this.p.id, this.form)
-      .then(res => {
-              this.dialog = false;
+    up: function() {
+      axios
+        .put("http://192.168.1.44:8000/toys/" + this.p.id, this.form)
+        .then(res => {
+          this.dialog = false;
 
-              this.form.name = '';
-              this.form.description = '';
-              this.form.toy_category = '';
-
-              this.$store.dispatch("get")
-              alert(res.statusText + ' sukses')
-      })
-      .catch(err => {
-        alert(err)
-      })
+          this.$store.dispatch("get");
+          alert(res.statusText + " sukses");
+        })
+        .catch(err => {
+          alert(err);
+        });
     }
+  },
+  created() {
+    this.form.name = this.p.name;
+    this.form.description = this.p.description;
+    this.form.toy_category = this.p.toy_category;
+    this.form.was_included_in_home = this.p.was_included_in_home;
   }
-}
+};
 </script>

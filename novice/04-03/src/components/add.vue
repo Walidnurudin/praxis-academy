@@ -49,7 +49,7 @@ export default {
     form: {
         name: '',
         description: '',
-        release_date: "2017-10-08T01:01:00.776594Z",
+        release_date: new Date(),
         toy_category: '',
         was_included_in_home: false
     }

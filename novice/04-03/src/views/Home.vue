@@ -11,7 +11,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="i in getData" :key="i.id">
+          <tr v-if="isLoading"><h1>Loading...</h1></tr>
+          <tr v-else v-for="i in getData" :key="i.id">
             <td class="text-center">{{i.id}}</td>
             <td class="text-center">
               <router-link :to="`/detail/${i.id}`">{{i.name}}</router-link>
@@ -36,7 +37,7 @@
 <script>
 import add from "../components/add";
 import update from "../components/update";
-import { mapGetters } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import axios from "axios";
 
 export default {
@@ -45,7 +46,11 @@ export default {
     update
   },
   computed: {
-    ...mapGetters(["getData"])
+    ...mapGetters(["getData"]),
+    ...mapState([
+      'isLoading',
+      'isError'
+    ])
   },
   methods: {
     del: function(id) {
